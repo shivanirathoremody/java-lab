@@ -1,0 +1,61 @@
+TicketReserve.java
+
+import javax.swing.*;
+import java.io.*;
+public class TicketReserve {
+  
+public static void main(String[] args)
+{
+	boolean ret;
+	do
+	{
+		String sticketNo=JOptionPane.showInputDialog(null,"Enter Ticket Number ");
+		TravelTicketChecking tTCkech1= new TravelTicketChecking(sticketNo);
+		ret=tTCkech1.tickeetFormatChecking();
+		if (ret==true)
+			tTCkech1.ticketValidation();
+	
+	}while(ret==false);
+}
+}
+
+
+
+AccessAccount.java
+
+import javax.swing.*;
+public class TravelTicketChecking {
+	private String tktNumber;
+	public TravelTicketChecking (String tNum)
+	{
+		tktNumber=tNum;
+	}
+	public void ticketValidation(){
+		int number,reminder,reminder2;
+		int ticketNo=Integer.parseInt(tktNumber); 
+		reminder=ticketNo%10;
+		number=ticketNo/10;
+		reminder2=number%7;
+		if(reminder==reminder2)
+		{
+			JOptionPane.showMessageDialog(null,"It is a valid Ticket number");	
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null,"Ticket number is not valid");
+		}
+	}
+	public boolean tickeetFormatChecking(){
+		int ticketNo=Integer.parseInt(tktNumber);
+		if(tktNumber.length()==6 && ticketNo>=0 && ticketNo<=999999)
+		{
+			JOptionPane.showMessageDialog(null,"Ticket no. entered "+ticketNo+" is correctly formated.");
+			return true;
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null,"Please enter a 6-digit ticket number only");
+			return false;
+		}
+	}
+}
