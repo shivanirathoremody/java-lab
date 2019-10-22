@@ -1,1 +1,51 @@
+public class AnimalMain2 {
+    public static void main(String args[])
+    {
+        Dog myDog=new Dog();
+        Cow myCow=new Cow();
+        Snake mySnake=new Snake();
+        myDog.setAnimalName("Jenny");
+        myCow.setAnimalName("Gori");
+        mySnake.setAnimalName("Sharkie");
+        System.out.println(myDog.getAnimalName()+" says ");
+        myDog.speak();
+        System.out.println(myCow.getAnimalName()+" says ");
+        myCow.speak();
+        System.out.println(mySnake.getAnimalName()+" says ");
+        mySnake.speak();
+    }
+}
 
+
+
+
+public abstract class Animal{
+    private String nameOfAnimal;
+    public abstract void speak();
+    public String getAnimalName()
+    {
+        return nameOfAnimal;
+    }
+    public void setAnimalName(String name)
+    {
+        nameOfAnimal=name;
+    }
+    }
+    class Dog extends Animal
+    {
+        public void speak()
+        {System.out.println("Woof!!");
+        }
+    }
+    class Snake extends Animal
+    {
+        public void speak()
+        {System.out.println("Ssss!");
+        }
+    }
+    class Cow extends Animal
+    {
+        public void speak()
+        {System.out.println("Moo!");
+        }
+    }
