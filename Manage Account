@@ -1,0 +1,55 @@
+ AccessAccount.java
+
+import javax.swing.*;
+public class AccessAccount {
+    public static void main(String[] args) {
+        
+String accountHoldername=JOptionPane.showInputDialog(null,"create new account."+"\n"+"Enter your name");
+String accountnumber=JOptionPane.showInputDialog(null,"Enter account no(13 character)");
+double balance=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter account balance"));
+
+BankAccount acc1=new BankAccount(accountHoldername,accountnumber,balance);
+int ret=Integer.parseInt(JOptionPane.showInputDialog(null,"Select an option :"+"\n"+"1-Deposit"+"\n"+"2-Withdraw"+"\n"+"3-Balance Check"+"\n"+"4-Exit"));
+ if(ret==1)
+     acc1.deposit();
+ if(ret==2)
+     acc1.withdrawl();
+ if(ret==3)
+     acc1.balanceCheck();
+ if(ret==4)
+     JOptionPane.showInputDialog(null,"Thank you");
+    }
+    
+}
+
+BankAccount.java
+
+import javax.swing.*;
+public class BankAccount {
+    
+String accountHoldername,accountnumber;
+double balance;
+public BankAccount(String n,String no,double b)
+{
+	accountHoldername=n;
+	accountnumber=no;
+	balance=b;	
+}
+public void deposit()
+{
+	int b=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter amount to be deposit"));
+	balance=balance+b;
+	JOptionPane.showMessageDialog(null,b+" Amount deposited"+"\n"+"Total amount is "+balance);
+}
+public void withdrawl()
+{
+	int b=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter amount to withdraw"));
+	balance=balance-b;
+	JOptionPane.showMessageDialog(null,b+" Amount deducted"+"\n"+"Total amount is "+balance);
+}
+public void balanceCheck()
+{
+	JOptionPane.showMessageDialog(null,"Your balance is"+balance);
+}
+
+}
