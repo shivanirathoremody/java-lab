@@ -1,0 +1,23 @@
+ import javax.swing.*;
+public class StudentsGrade {
+public static void main(String[] args)
+{
+	int percent;
+	String spercent=JOptionPane.showInputDialog(null,"Enter students percentage");
+	percent=Integer.parseInt(spercent);
+	if(percent==100)
+	JOptionPane.showMessageDialog(null,"Perfect score");
+	if(percent<100 && percent>=90)
+	JOptionPane.showMessageDialog(null,"Excellent");
+	if(percent<90 && percent>=80)
+	JOptionPane.showMessageDialog(null,"Good");
+	if(percent<80 && percent>=70)
+	JOptionPane.showMessageDialog(null,"Above average");
+        if(percent<70 && percent>=60)
+	JOptionPane.showMessageDialog(null,"Average");
+        if(percent<60 && percent>=50)
+	JOptionPane.showMessageDialog(null,"Below average");
+	else
+	JOptionPane.showMessageDialog(null,"Fail");
+}
+}
