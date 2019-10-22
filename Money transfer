@@ -1,0 +1,76 @@
+AccessAccount.java
+
+import accessaccount.*;
+import javax.swing.*;
+public class AccessAccount {
+public static void main(String[] args) {
+        
+String accountHoldername=JOptionPane.showInputDialog(null,"create new account."+"\n"+"Enter your name");
+String accountnumber=JOptionPane.showInputDialog(null,"Enter account no(13 character)");
+double balance=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter account balance"));
+
+BankAccount acc1=new BankAccount(accountHoldername,accountnumber,balance);
+ int ret=Integer.parseInt(JOptionPane.showInputDialog(null,"Select an option :"+"\n"+"1-Deposit"+"\n"+"2-Withdraw"+"\n"+"3-Balance Check"+"\n"+"4-Transfer Amount"+"\n"+"5-Exit"));
+ if(ret==1)
+     acc1.deposit();
+ if(ret==2)
+     acc1.withdrawl();
+ if(ret==3)
+     acc1.balanceCheck();
+ if(ret==4)
+     acc1.moneyTransfer();
+ if(ret==5)
+     JOptionPane.showInputDialog(null,"Thank you");
+    }
+}
+BankAccount.java
+
+import accessaccount.*;
+import javax.swing.*;
+
+public class BankAccount {
+   static int count=0;
+String accountHoldername,accountnumber;
+double balance;
+public BankAccount(String n,String no,double b)
+{
+	
+	accountHoldername=n;
+	accountnumber=no;
+	balance=b;	
+	count++;
+}
+public void deposit()
+{
+	int b=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter amount to be deposit"));
+	balance=balance+b;
+	JOptionPane.showMessageDialog(null,b+" Amount deposited"+"\n"+"Total amount is "+balance);
+	JOptionPane.showMessageDialog(null,count+" object added");
+}
+public void withdrawl()
+{
+	int b=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter amount to withdraw"));
+	balance=balance-b;
+	JOptionPane.showMessageDialog(null,b+" Amount deducted"+"\n"+"Total amount is "+balance);
+}
+public void balanceCheck()
+{
+	JOptionPane.showMessageDialog(null,"Your balance is"+balance);
+}
+public void moneyTransfer()
+{
+    BankAccount acc2;
+    acc2 = new BankAccount("Rakesh","12345678ASERF",20000.00);
+    int b=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter amount to transfer"));
+    acc2.balance=acc2.balance+b;
+    balance=balance-b;
+    JOptionPane.showMessageDialog(null,b+" Amount deducted"+"\n"+"Total amount is "+balance);
+    
+}
+
+    private static class acc2 {
+
+        public acc2() {
+        }
+    }
+}
