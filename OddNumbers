@@ -1,0 +1,12 @@
+import javax.swing.*;
+public class OddNumbers {
+    public static void main(String args[])
+    {
+    int n;
+    String oddnumbers="NULL";
+    for(n=1;n<=20;n+=2)
+    {
+        oddnumbers=oddnumbers+n+"\n";
+    }
+    JOptionPane.showMessageDialog(null,"Odd Numbers between 1-20 \n"+oddnumbers);
+    }
