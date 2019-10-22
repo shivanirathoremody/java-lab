@@ -1,0 +1,56 @@
+Class Parking.java
+
+import javax.swing.*;
+public Class Parking{
+public static void main(String[] args)
+   {
+int select;
+do
+  {
+      int vehicleno,vehicleType,vehicleHours;
+	vehicleno=Integer.parseInt(JOptionPane.showInputDialog(null,"enter the vehicle number"));
+	vehicleType=Integer.parseInt(JOptionPane.showInputDialog(null,"enter the vehicle type"));
+	vehicleHours=Integer.parseInt(JOptionPane.showInputDialog(null,"enter the vehicle hours"));
+	BillProcessing b=new BillProcessing(vehicleno,vehicleType,vehicleHours);
+	if(vehicleType==2)
+		b.twoWheelers();
+	else if(vehicleType==4)
+		b.fourWheelers();
+
+select=JOptionPane.showConfirmDialog(null,"do you want to enter more customer details");
+   }while(select==0);
+
+    }
+}
+
+
+
+BillProcessing.java
+
+import javax.swing.*;
+public class BillProcessing
+{
+private int vehicleno,vehicleType,vehicleHours,payment;
+public BillProcessing(int no,int t,int h)
+{
+vehicleno=no;
+vehicleType=t;
+vehicleHours=h;
+}
+ public void twoWheelers()
+{
+  if(vehicleHours<=5)
+   payment=vehicleHours*10;
+  else
+    payment=100;
+	JOptionPane.showMessageDialog(null,"the gtotal charges "+payment);
+}
+ public void fourWheelers()
+{
+  if(vehicleHours<=5)
+   payment=vehicleHours*20;
+  else
+    payment=200;
+	JOptionPane.showMessageDialog(null,"the gtotal charges "+payment);
+}
+}
