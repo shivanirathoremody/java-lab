@@ -1,0 +1,22 @@
+Name.java
+ import javax.swing.*;
+public class Name {
+    
+
+	public static void main(String args[]){
+		String n=JOptionPane.showInputDialog(null,"Enter your name");
+		
+		String[] arrofn=n.split(" ");
+		System.out.print(arrofn[0]+" ");
+		for(int i=1;i<=arrofn.length-2;i++)
+		{
+			
+			String first=arrofn[i];
+			System.out.print((first.toUpperCase()).charAt(0)+".");
+		}
+		//System.out.print(" "+(arrofn[arrofn.length-1]).toUpperCase());
+		System.out.print(" "+arrofn[arrofn.length-1]);
+	}
+
+
+}
