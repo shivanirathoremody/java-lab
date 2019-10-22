@@ -1,0 +1,43 @@
+class Food.java
+public class Food {
+    static int count=0;
+    int quantity;
+    public Food(int q)
+    {
+        quantity=q;
+        count++; 
+    }
+    public static void displayC()
+    {
+    System.out.println("Old customer="+Food.count);
+    }
+}
+   class FastFood extends Food{
+    static int count1=0;
+    int qua,price;
+    public FastFood(int q,int p)
+    {
+        super (q);
+        price=p;
+        count1++; 
+    }
+    public static void displayCount()
+    {
+    System.out.println("Normal customers="+count1);
+    }
+}
+
+
+
+Main.java
+
+public class Main {
+       public static void main(String[] args) {
+       Food f=new Food(2);
+       FastFood fast1=new FastFood(1,200);
+        Food f1=new Food(2);
+       FastFood fast2=new FastFood(1,200);
+       Food.displayC();
+       FastFood.displayCount(); 
+    }
+}
