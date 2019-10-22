@@ -1,0 +1,17 @@
+- public class WagesCalculation {
+    public static void main (String[] args)
+	{
+		int hours=39;
+		double wages=0; 
+		if(hours<=40)
+		{
+			wages=hours*8.25;
+		}
+		else
+		{
+			
+			wages=40*8.25+(hours-40)*8.25*1.5;//overtime
+		}
+		System.out.print("Total wages are = "+wages);
+	}
+}
