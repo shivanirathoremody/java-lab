@@ -1,0 +1,40 @@
+Main.java
+public class Main {
+    public static void main(String args[]){
+        Shopping s=new Shopping();
+        int r;
+        do{
+        r=s.display();
+        }while(r==1);
+    }
+}
+
+Shopping.java
+import javax.swing.*;
+public class Shopping {
+	static int count=0;
+	String dress[]={"top","jeans","shirt"};
+	String shoe[]={"steltios","boots","heels"};
+	String jewellery[]={"ear rings","bangles","nose pin"};
+        public int display(){
+	int a=Integer.parseInt(JOptionPane.showInputDialog(null,"Choose what you want"+"\n"+"1-Dress"+"\n"+"2-Shoes"+"\n"+"3-Jewellery"));
+	if(a==1)
+	{
+	int b=Integer.parseInt(JOptionPane.showInputDialog(null,"Choose dress type"+"\n"+"1-"+dress[0]+"\n"+"2-"+dress[1]+"\n"+"3-"+dress[2]));
+	count=count+1;
+	}
+	if(a==2)
+	{
+	int c=Integer.parseInt(JOptionPane.showInputDialog(null,"Choose shoe type"+"\n"+"1-"+shoe[0]+"\n"+"2-"+shoe[1]+"\n"+"3-"+shoe[2]));
+	count=count+1;
+	}
+	if(a==3)
+	{
+	int d=Integer.parseInt(JOptionPane.showInputDialog(null,"Choose jewellery type"+"\n"+"1-"+jewellery[0]+"\n"+"2-"+jewellery[1]+"\n"+"3-"+jewellery[2]));
+	count=count+1;
+	}
+	JOptionPane.showMessageDialog(null,"Total items in cart are "+count);
+        int r=Integer.parseInt(JOptionPane.showInputDialog(null,"Want to continue?"+"\n 1-Yes"+"\n 2-No"));
+        return r;
+        }
+}
