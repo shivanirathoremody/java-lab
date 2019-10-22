@@ -1,0 +1,48 @@
+Swimming.java
+
+import javax.swing.*;
+public class Swimming {
+public static void main (String args[])
+{	
+int i;
+	do{
+	int length=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter the length of pool"));
+	int width=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter the width of pool"));
+	int depth=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter the depth of pool"));
+
+	PoolAssociates c1=new PoolAssociates(length,width,depth);
+
+	c1.findingVolume();
+	c1.totalAmount();
+	i=Integer.parseInt(JOptionPane.showInputDialog(null,"Want to continue...?(yes=1/n0=2)"));
+	}while(i==1);
+}
+}
+
+
+PoolAssociates.java
+
+import javax.swing.*;
+public class PoolAssociates {
+double volume,gallons;
+int length;
+int width;
+int depth;
+public PoolAssociates(int l,int w,int d)
+{
+	length=l;
+	width=w;
+	depth=d;
+} 
+public void findingVolume()
+{
+	volume=length*width*depth;
+	gallons=volume*7.5;
+}
+public void totalAmount()
+{	
+	double minutes=(gallons/50)/60;
+	double dollers=75+(8*minutes);
+	JOptionPane.showMessageDialog(null,"total dollers you have to pay - $"+dollers);
+}
+}
