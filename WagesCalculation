@@ -1,4 +1,4 @@
-- public class WagesCalculation {
+ public class WagesCalculation {
     public static void main (String[] args)
 	{
 		int hours=39;
